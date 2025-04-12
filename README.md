@@ -10,6 +10,14 @@ npm
  npm i create-react-tsx
 ```
 
+npx
+
+```
+npx create-react-tsx <component>
+```
+
+package.json
+
 ```
 npm install @sudo-self/create-react-tsx@1.0.2
 ```
