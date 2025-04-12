@@ -1,7 +1,7 @@
 {
   "name": "create-react-component",
   "version": "1.0.0",
-  "description": "Generate React components from the command line",
+  "description": "Generate React components from the command line with AI.",
   "main": "index.js",
   "bin": {
     "create-react-component": "./index.js"
