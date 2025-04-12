@@ -3,89 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>create-react-tsx</title>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9fafb;
-      color: #111827;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      background: #3b82f6;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    pre {
-      background: #f3f4f6;
-      color: #111827;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      white-space: pre;
-      font-size: 14px;
-    }
-    h1, h2 {
-      color: #1f2937;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.875rem;
-      color: #6b7280;
-    }
-    code {
-      background: #e5e7eb;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-    a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>create-react-tsx - React TSX Generator</title>
+  <meta name="description" content="CLI tool to quickly generate React TypeScript components from the command line.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    create-react-tsx
-  </header>
+<body class="bg-gray-50 text-gray-800">
+  <div class="min-h-screen flex flex-col items-center justify-center p-6">
+    <h1 class="text-4xl font-bold mb-6 text-blue-600">create-react-tsx</h1>
+    <p class="text-lg mb-8 text-center max-w-2xl">
+      A CLI tool to quickly generate beautiful React components with TypeScript support, straight from your terminal.
+    </p>
 
-  <main>
-    <h1>Generate React + TypeScript Components from the CLI</h1>
+    <div class="bg-white shadow-lg rounded-lg p-6 max-w-3xl w-full space-y-6">
+      <h2 class="text-2xl font-semibold text-gray-700">Install</h2>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npm install create-react-tsx</code></pre>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npx create-react-tsx &lt;component-name&gt;</code></pre>
 
-    <h2>Install</h2>
-    <pre>npm install create-react-tsx</pre>
+      <h2 class="text-2xl font-semibold text-gray-700 mt-8">Example</h2>
+      <p>Create a Button component:</p>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npx create-react-tsx Button</code></pre>
 
-    <h2>Or use directly with NPX</h2>
-    <pre>npx create-react-tsx &lt;component-name&gt;</pre>
+      <h2 class="text-2xl font-semibold text-gray-700 mt-8">Generated Component</h2>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>import React, { useState } from 'react';
 
-    <h2>Example</h2>
-    <p>Generate a <code>Button</code> component:</p>
-    <pre>npx create-react-tsx Button</pre>
+interface ButtonProps {}
 
-    <h2>Output</h2>
-    <pre>import React, { useState } from 'react';
-
-interface CounterProps {}
-
-const Counter: React.FC&lt;CounterProps&gt; = () =&gt; {
+const Button: React.FC&lt;ButtonProps&gt; = () =&gt; {
   const [count, setCount] = useState(0);
 
   const increment = () =&gt; setCount(prev =&gt; prev + 1);
@@ -96,18 +39,34 @@ const Counter: React.FC&lt;CounterProps&gt; = () =&gt; {
       &lt;div className="text-2xl font-bold"&gt;Counter App&lt;/div&gt;
       &lt;div className="text-4xl font-bold text-blue-500"&gt;{count}&lt;/div&gt;
       &lt;div className="flex space-x-4"&gt;
-        &lt;button onClick={increment} className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"&gt;Increment&lt;/button&gt;
-        &lt;button onClick={decrement} className="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded" disabled={count === 0}&gt;Decrement&lt;/button&gt;
+        &lt;button onClick={increment} className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"&gt;
+          Increment
+        &lt;/button&gt;
+        &lt;button onClick={decrement} className="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded" disabled={count === 0}&gt;
+          Decrement
+        &lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
 };
 
-export default Counter;
-</pre>
+export default Button;
+</code></pre>
 
-    <h2>Default Behavior</h2>
-    <p>Generated components are saved directly in the working directory.</p>
+      <h2 class="text-2xl font-semibold text-gray-700 mt-8">Features</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Fast CLI generation</li>
+        <li>TypeScript-ready components</li>
+        <li>Styled with Tailwind CSS</li>
+        <li>No setup required</li>
+      </ul>
+
+      <div class="mt-10 text-center">
+        <a href="https://www.npmjs.com/package/create-react-tsx" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+          View on NPM
+        </a>
+      </div>
+    </div>
 
     <p>📦 Published on <a href="https://www.npmjs.com/package/create-react-tsx" target="_blank">npm</a></p>
   </main>
