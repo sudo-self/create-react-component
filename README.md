@@ -4,8 +4,14 @@ CLI tool to generate React components from the command line.
 
 ## install 
 
+npm
+
 ```bash
  npm i create-react-tsx
+```
+
+```
+npm install @sudo-self/create-react-tsx@1.0.2
 ```
 
 ## use
