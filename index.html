@@ -30,12 +30,13 @@
       margin: auto;
     }
     pre {
-      background: #1f2937;
-      color: #d1d5db;
+      background: #f3f4f6;
+      color: #111827;
       padding: 1rem;
       border-radius: 8px;
       overflow-x: auto;
-      white-space: pre-wrap;
+      white-space: pre;
+      font-size: 14px;
     }
     h1, h2 {
       color: #1f2937;
@@ -70,17 +71,17 @@
     <h1>Generate React + TypeScript Components from the CLI</h1>
 
     <h2>Install</h2>
-    <pre><code>npm install create-react-tsx</code></pre>
+    <pre>npm install create-react-tsx</pre>
 
     <h2>Or use directly with NPX</h2>
-    <pre><code>npx create-react-tsx &lt;component-name&gt;</code></pre>
+    <pre>npx create-react-tsx &lt;component-name&gt;</pre>
 
     <h2>Example</h2>
     <p>Generate a <code>Button</code> component:</p>
-    <pre><code>npx create-react-tsx Button</code></pre>
+    <pre>npx create-react-tsx Button</pre>
 
     <h2>Output</h2>
-    <pre><code>import React, { useState } from 'react';
+    <pre>import React, { useState } from 'react';
 
 interface CounterProps {}
 
@@ -103,7 +104,7 @@ const Counter: React.FC&lt;CounterProps&gt; = () =&gt; {
 };
 
 export default Counter;
-</code></pre>
+</pre>
 
     <h2>Default Behavior</h2>
     <p>Generated components are saved directly in the working directory.</p>
@@ -116,4 +117,5 @@ export default Counter;
   </footer>
 </body>
 </html>
+
 
