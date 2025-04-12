@@ -1,7 +1,7 @@
 {
   "name": "create-react-component",
   "version": "1.0.0",
-  "description": "generate react components from the command line",
+  "description": "Generate React components from the command line",
   "main": "index.js",
   "bin": {
     "create-react-component": "./index.js"
@@ -16,5 +16,21 @@
     "start": "node index.js"
   },
   "author": "sudo-self",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "component",
+    "cli",
+    "generator",
+    "create-react-component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudo-self/create-react-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sudo-self/create-react-component/issues"
+  },
+  "homepage": "https://github.com/sudo-self/create-react-component"
 }
+
