@@ -35,6 +35,7 @@
       padding: 1rem;
       border-radius: 8px;
       overflow-x: auto;
+      white-space: pre-wrap;
     }
     h1, h2 {
       color: #1f2937;
@@ -67,32 +68,27 @@
 
   <main>
     <h1>Generate React + TypeScript Components from the CLI</h1>
-    <p><strong>Install:</strong></p>
 
+    <h2>Install</h2>
     <pre><code>npm install create-react-tsx</code></pre>
 
-    <p><strong>Or use with npx:</strong></p>
-
+    <h2>Or use directly with NPX</h2>
     <pre><code>npx create-react-tsx &lt;component-name&gt;</code></pre>
 
-    <h2>Example:</h2>
-
+    <h2>Example</h2>
     <p>Generate a <code>Button</code> component:</p>
-
     <pre><code>npx create-react-tsx Button</code></pre>
 
-    <h2>Output:</h2>
-
-    <pre><code>
-import React, { useState } from 'react';
+    <h2>Output</h2>
+    <pre><code>import React, { useState } from 'react';
 
 interface CounterProps {}
 
-const Counter: React.FC&lt;CounterProps&gt; = () => {
+const Counter: React.FC&lt;CounterProps&gt; = () =&gt; {
   const [count, setCount] = useState(0);
 
-  const increment = () => setCount(prev => prev + 1);
-  const decrement = () => setCount(prev => prev - 1);
+  const increment = () =&gt; setCount(prev =&gt; prev + 1);
+  const decrement = () =&gt; setCount(prev =&gt; prev - 1);
 
   return (
     &lt;div className="p-8 flex flex-col items-center space-y-4"&gt;
@@ -107,9 +103,9 @@ const Counter: React.FC&lt;CounterProps&gt; = () => {
 };
 
 export default Counter;
-    </code></pre>
+</code></pre>
 
-    <h2>Default</h2>
+    <h2>Default Behavior</h2>
     <p>Generated components are saved directly in the working directory.</p>
 
     <p>📦 Published on <a href="https://www.npmjs.com/package/create-react-tsx" target="_blank">npm</a></p>
@@ -120,3 +116,4 @@ export default Counter;
   </footer>
 </body>
 </html>
+
