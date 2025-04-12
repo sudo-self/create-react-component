@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>create-react-tsx</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #3b82f6;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    pre {
+      background: #1f2937;
+      color: #d1d5db;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    h1, h2 {
+      color: #1f2937;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    code {
+      background: #e5e7eb;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    create-react-tsx
+  </header>
+
+  <main>
+    <h1>Generate React + TypeScript Components from the CLI</h1>
+    <p><strong>Install:</strong></p>
+
+    <pre><code>npm install create-react-tsx</code></pre>
+
+    <p><strong>Or use with npx:</strong></p>
+
+    <pre><code>npx create-react-tsx &lt;component-name&gt;</code></pre>
+
+    <h2>Example:</h2>
+
+    <p>Generate a <code>Button</code> component:</p>
+
+    <pre><code>npx create-react-tsx Button</code></pre>
+
+    <h2>Output:</h2>
+
+    <pre><code>
+import React, { useState } from 'react';
+
+interface CounterProps {}
+
+const Counter: React.FC&lt;CounterProps&gt; = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(prev => prev + 1);
+  const decrement = () => setCount(prev => prev - 1);
+
+  return (
+    &lt;div className="p-8 flex flex-col items-center space-y-4"&gt;
+      &lt;div className="text-2xl font-bold"&gt;Counter App&lt;/div&gt;
+      &lt;div className="text-4xl font-bold text-blue-500"&gt;{count}&lt;/div&gt;
+      &lt;div className="flex space-x-4"&gt;
+        &lt;button onClick={increment} className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"&gt;Increment&lt;/button&gt;
+        &lt;button onClick={decrement} className="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded" disabled={count === 0}&gt;Decrement&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default Counter;
+    </code></pre>
+
+    <h2>Default</h2>
+    <p>Generated components are saved directly in the working directory.</p>
+
+    <p>📦 Published on <a href="https://www.npmjs.com/package/create-react-tsx" target="_blank">npm</a></p>
+  </main>
+
+  <footer>
+    &copy; 2025 create-react-tsx
+  </footer>
+</body>
+</html>
