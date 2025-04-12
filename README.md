@@ -1,4 +1,4 @@
-# create-react-component
+# create-react-tsx
 
 CLI tool to generate React components from the command line.
 
