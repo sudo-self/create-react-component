@@ -320,18 +320,17 @@
         </div>
        
 
-  <div id="embed-container" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+ <div id="stackblitz-container"></div>
 
-  <script>
-    stackblitz.embedGithubProject(
-      'embed-container',
-      'sudo-self/create-react-tsx-demo',
-      {
-        openFile: 'README.md',
-        forceEmbedLayout: true
-      }
-    );
-  </script>
+<script>
+  window.onload = () => {
+    StackBlitz.embedProjectId('stackblitz-container', 'vitejs-vite-xatjq7fy', {
+      forceEmbedLayout: true,
+      openFile: 'README.md', 
+    });
+  };
+</script>
+
 
 
     <footer class="bg-white">
