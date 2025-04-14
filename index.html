@@ -1,79 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>create-react-tsx - React TSX Generator</title>
-  <meta name="description" content="CLI tool to quickly generate React TypeScript components from the command line.">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create-react-tsx - Rapid React TypeScript Project Setup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .terminal {
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .terminal-header {
+            background-color: #3a3a3a;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        .command-line {
+            color: #50fa7b;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #f8f8f2;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="min-h-screen flex flex-col items-center justify-center p-6">
-    <h1 class="text-4xl font-bold mb-6 text-blue-600">create-react-tsx</h1>
-    <p class="text-lg mb-8 text-center max-w-2xl">
-      A CLI tool to quickly generate beautiful React components with TypeScript support, straight from your terminal.
-    </p>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fab fa-node-js text-indigo-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">create-react-tsx</span>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="#features" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600">Features</a>
+                    <a href="#usage" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600">Usage</a>
+                    <a href="#docs" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600">Documentation</a>
+                    <a href="https://github.com/sudo-self/create-react-tsx" target="_blank" class="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 max-w-3xl w-full space-y-6">
-      <h2 class="text-2xl font-semibold text-gray-700">Install</h2>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npm install create-react-tsx</code></pre>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npx create-react-tsx &lt;component-name&gt;</code></pre>
-
-      <h2 class="text-2xl font-semibold text-gray-700 mt-8">Example</h2>
-      <p>Create a Button component:</p>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npx create-react-tsx Button</code></pre>
-
-      <h2 class="text-2xl font-semibold text-gray-700 mt-8">Generated Component</h2>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>import React, { useState } from 'react';
-
-interface ButtonProps {}
-
-const Button: React.FC&lt;ButtonProps&gt; = () =&gt; {
-  const [count, setCount] = useState(0);
-
-  const increment = () =&gt; setCount(prev =&gt; prev + 1);
-  const decrement = () =&gt; setCount(prev =&gt; prev - 1);
-
-  return (
-    &lt;div className="p-8 flex flex-col items-center space-y-4"&gt;
-      &lt;div className="text-2xl font-bold"&gt;Counter App&lt;/div&gt;
-      &lt;div className="text-4xl font-bold text-blue-500"&gt;{count}&lt;/div&gt;
-      &lt;div className="flex space-x-4"&gt;
-        &lt;button onClick={increment} className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"&gt;
-          Increment
-        &lt;/button&gt;
-        &lt;button onClick={decrement} className="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded" disabled={count === 0}&gt;
-          Decrement
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  );
-};
-
-export default Button;
-</code></pre>
-
-      <h2 class="text-2xl font-semibold text-gray-700 mt-8">Features</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Fast CLI generation</li>
-        <li>TypeScript-ready components</li>
-        <li>Styled with Tailwind CSS</li>
-        <li>No setup required</li>
-      </ul>
-
-      <div class="mt-10 text-center">
-        <a href="https://www.npmjs.com/package/create-react-tsx" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
-          View on NPM
-        </a>
-      </div>
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block">Supercharge your</span>
+                            <span class="block gradient-text">React + TypeScript</span>
+                            <span class="block">development</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            A zero-configuration CLI for creating production-ready React applications with TypeScript, ESLint, Prettier, and more - all set up in seconds.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#installation" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="https://github.com/sudo-self/create-react-tsx" target="_blank" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div class="h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center p-8">
+                <div class="terminal w-full max-w-2xl h-64">
+                    <div class="terminal-header p-3 flex items-center">
+                        <span class="terminal-dot bg-red-500"></span>
+                        <span class="terminal-dot bg-yellow-500"></span>
+                        <span class="terminal-dot bg-green-500"></span>
+                        <span class="ml-2 text-gray-300 text-sm">bash</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-4">
+                            <span class="text-purple-400">$</span>
+                            <span class="command-line">npx create-react-tsx my-app</span>
+                            <span class="cursor"></span>
+                        </div>
+                        <div class="text-green-400 mb-2">Creating a new React + TypeScript app in /my-app</div>
+                        <div class="text-gray-400 mb-2">Installing packages. This might take a couple of minutes.</div>
+                        <div class="text-gray-400 mb-2">✔ ESLint configured</div>
+                        <div class="text-gray-400 mb-2">✔ Prettier configured</div>
+                        <div class="text-gray-400 mb-2">✔ Jest testing environment set up</div>
+                        <div class="text-green-400">Success! Created my-app at /my-app</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <p>📦 Published on <a href="https://www.npmjs.com/package/create-react-tsx" target="_blank">npm</a></p>
-  </main>
+    <!-- Installation Section -->
+    <div id="installation" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Installation</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Get started in seconds
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                   say goodbye to the boilerplate
+                </p>
+            </div>
 
-  <footer>
-    &copy; 2025 create-react-tsx
-  </footer>
+            <div class="mt-10">
+                <div class="flex justify-center">
+                    <div class="terminal w-full max-w-3xl">
+                        <div class="terminal-header p-3 flex items-center">
+                            <span class="terminal-dot bg-red-500"></span>
+                            <span class="terminal-dot bg-yellow-500"></span>
+                            <span class="terminal-dot bg-green-500"></span>
+                        </div>
+                        <div class="p-4">
+                            <div class="mb-4">
+                                <span class="text-green-400">$</span>
+                                <span class="command-line text-gray-200">npm i create-react-tsx</span>
+                            </div>
+                            <div class="text-gray-400 mb-2"># use with npx</div>
+                            <div class="mb-4">
+                                <span class="text-green-400">$</span>
+                                <span class="command-line text-gray-200">npx create-react-tsx navbar</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Everything you need for modern React development
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Batteries included, but fully customizable.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">TypeScript Ready</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Pre-configured TypeScript with strict type checking and all the latest features.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
+                            <i class="fas fa-check-double text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Linting & Formatting</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                ESLint and Prettier configured out of the box with sensible defaults.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
+                            <i class="fas fa-vial text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Testing Setup</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Jest and React Testing Library configured for unit and integration testing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
+                            <i class="fas fa-puzzle-piece text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Optional Templates</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Choose from templates like Redux, Context API, or Tailwind CSS.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
+                            <i class="fas fa-tachometer-alt text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Performance Optimized</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Production-ready build configuration with code splitting and optimization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
+                            <i class="fas fa-lock text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Security Conscious</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Secure defaults including CSP headers and dependency vulnerability checks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Usage Section -->
+    <div id="usage" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Usage</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Simple commands, powerful results
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                    <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                            Available Options
+                        </h3>
+                    </div>
+                    <div class="border-t border-gray-200">
+                        <dl>
+                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">--template</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Specify a template (options: default, redux, context, tailwind)
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">--skip-install</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Skip package installation after project creation
+                                </dd>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">--use-npm</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Force npm to be used as the package manager (default: yarn if available)
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">--verbose</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Show detailed installation logs
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documentation Section -->
+    <div id="docs" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Documentation</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Learn more about create-react-tsx
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Comprehensive documentation to help you get the most out of the tool.
+                </p>
+            </div>
+
+            <div class="mt-10 grid gap-8 lg:grid-cols-3">
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                                <i class="fas fa-book text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">Getting Started</h3>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    Learn how to create your first project and understand the file structure.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                                        Read guide <span aria-hidden="true">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                                <i class="fas fa-sliders-h text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">Configuration</h3>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    Customize ESLint, Prettier, Jest and other tools to fit your needs.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                                        Read guide <span aria-hidden="true">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                                <i class="fas fa-question-circle text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">FAQ</h3>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    Find answers to common questions and troubleshooting tips.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                                        Read guide <span aria-hidden="true">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-indigo-700">
+        <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                <span class="block">Ready to create?</span>
+                <span class="block">Start your next React project today.</span>
+            </h2>
+            <div class="mt-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#installation" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                        Get Started
+                    </a>
+                </div>
+                <div class="ml-3 inline-flex">
+                    <a href="https://github.com/yourusername/create-react-tsx" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-200 bg-indigo-800 hover:bg-indigo-700">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                <div class="px-5 py-2">
+                    <a href="#features" class="text-base text-gray-500 hover:text-gray-900">
+                        Features
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#usage" class="text-base text-gray-500 hover:text-gray-900">
+                        Usage
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#docs" class="text-base text-gray-500 hover:text-gray-900">
+                        Documentation
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                        Changelog
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                        Contributing
+                    </a>
+                </div>
+            </nav>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="https://github.com/sudo-self/create-react-tsx" target="_blank" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">GitHub</span>
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://x.com/ilostmyipad" target="_blank" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">X</span>
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="https://npmjs.com/package/create-react-tsx" target="_blank" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">npm</span>
+                    <i class="fab fa-npm text-xl"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-center text-base text-indigo-400">
+                <code>create-react-tsx landing page</code>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for the terminal cursor
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            if (cursor) {
+                setInterval(() => {
+                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                }, 500);
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
