@@ -318,14 +318,19 @@
             </div>
         </div>
        
- <iframe
-  src="https://stackblitz.com/github/sudo-self/create-react-tsx-demo?embed=1&file=README.md"
-  width="100%"
-  height="600px"
-  style="border:0; border-radius: 8px; overflow:hidden;"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+
+  <div id="embed-container" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+
+  <script>
+    stackblitz.embedGithubProject(
+      'embed-container',
+      'sudo-self/create-react-tsx-demo',
+      {
+        openFile: 'README.md',
+        forceEmbedLayout: true
+      }
+    );
+  </script>
 
 
     <footer class="bg-white">
@@ -385,6 +390,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
