@@ -58,8 +58,16 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <i class="fab fa-node-js text-indigo-600 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-gray-900">create-react-tsx</span>
+                        <div style="display: flex; align-items: center;">
+                          <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            alt="TypeScript Icon"
+                            style="height: 24px; width: 24px; margin-right: 8px;"
+                          />
+                          <span style="font-size: 1.25rem; font-weight: bold; color: #1f2937;">create-react-tsx</span>
+                        </div>
+
+
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:items-center">
@@ -83,10 +91,10 @@
                         <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                             <span class="block">Supercharge your</span>
                             <span class="block gradient-text">React + TypeScript</span>
-                            <span class="block">development</span>
+                            <span class="block">Components</span>
                         </h1>
                         <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            A zero-configuration CLI for creating production-ready React applications with TypeScript, ESLint, Prettier, and more - all set up in seconds.
+                            zero-configuration command line package for creating production-ready React typed components
                         </p>
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                             <div class="rounded-md shadow">
@@ -111,20 +119,20 @@
                         <span class="terminal-dot bg-red-500"></span>
                         <span class="terminal-dot bg-yellow-500"></span>
                         <span class="terminal-dot bg-green-500"></span>
-                        <span class="ml-2 text-gray-300 text-sm">bash</span>
+                        <span class="ml-2 text-gray-300 text-sm">Command Line</span>
                     </div>
                     <div class="p-4">
                         <div class="mb-4">
-                            <span class="text-purple-400">$</span>
-                            <span class="command-line">npx create-react-tsx my-app</span>
+                            <span class="text-green-400">$</span>
+                            <span class="command-line text-indigo-300">npx create-react-tsx button</span>
                             <span class="cursor"></span>
                         </div>
-                        <div class="text-green-400 mb-2">Creating a new React + TypeScript app in /my-app</div>
-                        <div class="text-gray-400 mb-2">Installing packages. This might take a couple of minutes.</div>
-                        <div class="text-gray-400 mb-2">✔ ESLint configured</div>
-                        <div class="text-gray-400 mb-2">✔ Prettier configured</div>
-                        <div class="text-gray-400 mb-2">✔ Jest testing environment set up</div>
-                        <div class="text-green-400">Success! Created my-app at /my-app</div>
+                        <div class="text-yellow-400 mb-2">Generating code, please wait...⏳</div>
+                        <div class="text-green-700 mb-2">Component:</div>
+                        <div class="text-gray-400 mb-2">
+                            import React, { useState } from 'react';</div>
+                        <div class="text-gray-400 mb-2">interface ButtonProps {</div>
+                        <div class="text-gray-400 mb-2">const Button: React.FC<ButtonProps> = ({ onClick, children }) => {</div>
                     </div>
                 </div>
             </div>
@@ -190,9 +198,9 @@
                             <i class="fas fa-code text-xl"></i>
                         </div>
                         <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">TypeScript Ready</h3>
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">TypeScript</h3>
                             <p class="mt-2 text-base text-gray-500">
-                                Pre-configured TypeScript with strict type checking and all the latest features.
+                            define the types of variables, function parameters, and return values all from the CLI.
                             </p>
                         </div>
                     </div>
@@ -202,9 +210,9 @@
                             <i class="fas fa-check-double text-xl"></i>
                         </div>
                         <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">Linting & Formatting</h3>
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Command Line</h3>
                             <p class="mt-2 text-base text-gray-500">
-                                ESLint and Prettier configured out of the box with sensible defaults.
+                                npx create-react-tsx navbar is equal to /components/navbar.tsx
                             </p>
                         </div>
                     </div>
@@ -226,33 +234,9 @@
                             <i class="fas fa-puzzle-piece text-xl"></i>
                         </div>
                         <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">Optional Templates</h3>
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Deploy Faster</h3>
                             <p class="mt-2 text-base text-gray-500">
-                                Choose from templates like Redux, Context API, or Tailwind CSS.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
-                            <i class="fas fa-tachometer-alt text-xl"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">Performance Optimized</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                Production-ready build configuration with code splitting and optimization.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md feature-icon">
-                            <i class="fas fa-lock text-xl"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">Security Conscious</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                Secure defaults including CSP headers and dependency vulnerability checks.
+                               create beautiful components in seconds not hours!
                             </p>
                         </div>
                     </div>
